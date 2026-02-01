@@ -1,0 +1,19 @@
+title = "gitleaks config"
+
+[[rules]]
+description = "MoMo API Key"
+id = "momo-api-key"
+regex = '''(?i)(momo|mtn|orange)[_\-]?(api|key)[_\-]?key["']?\s*[:=]\s*["']?[a-z0-9]{32,}["']?'''
+tags = ["key", "momo", "api"]
+
+[[rules]]
+description = "Generic API Key"
+id = "generic-api-key"
+regex = '''(?i)(api|access|secret)[_\-]?(key|token|secret)["']?\s*[:=]\s*["']?[a-z0-9]{32,}["']?'''
+tags = ["key", "api"]
+
+[[rules]]
+description = "Base64 encoded data that might be secrets"
+id = "base64-encoded"
+regex = '''(?:[A-Za-z0-9+/]{4}){10,}(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?'''
+tags = ["base64"]

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: momo-payment-config
+  namespace: momo-payment
+  labels:
+    app: momo-payment
+    component: configuration
+data:
+  api-url: "https://api.momo.example.com"
+  api-version: "v2"
+  environment: "production"
+  log-level: "info"
+  currency: "XAF"
+  timeout: "30s"
+  max-retries: "3"
+  payment-timeout: "300"
+  max-amount: "5000000"
+  min-amount: "100"
+  daily-limit: "10000000"
+  enable-webhooks: "true"
+  enable-sms: "true"
+  enable-email: "true"
+  metrics-port: "9090"
+  health-check-interval: "30s"
+  log-format: "json"
+  log-retention-days: "30"
